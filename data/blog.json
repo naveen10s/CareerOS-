@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Blog",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "title": { "type": "string" },
+      "slug": { "type": "string" },
+      "date": { "type": "string" },
+      "category": { "type": "string" },
+      "tags": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "content": { "type": "string" },
+      "readingTime": { "type": "string" },
+      "featured": { "type": "boolean" }
+    }
+  },
+  "example": [
+    {
+      "title": "Why Telemetry is the Analyst's Superpower in Product",
+      "slug": "why-telemetry-is-pm-superpower",
+      "date": "2026-06-25",
+      "category": "Product Management",
+      "tags": ["Telemetry", "SQL", "Transition"],
+      "readingTime": "5 min read",
+      "featured": true,
+      "content": "Transitioning from a Business Analyst (BA) to a Product Manager (PM) is often framed around soft skills: communication, vision, and leadership. However, the most potent and underappreciated advantage a BA has is **telemetry literacy**.\n\nIn modern software organizations, PMs who depend entirely on data analyst queues to answer basic questions about feature usage move at a snail's pace. A BA who can directly write complex SQL joins against telemetry cohorts can validate prototypes, find drop-offs, and draft specifications in hours instead of days.\n\n### Designing Telemetry Log Specs\nWhen launching a new feature, a telemetry spec defines exactly what database events are logged. For example, instead of just checking a button click, we want to log:\n- User Segment (new vs. returning cohort)\n- Load Latency (impact of delays on completion rates)\n- Success States\n\n```sql\nSELECT \n  cohort_id, \n  COUNT(DISTINCT user_id) AS visitors,\n  SUM(CASE WHEN clicked_cta = 1 THEN 1 ELSE 0 END) AS conversions\nFROM product_funnel_telemetry\nGROUP BY cohort_id;\n```\n\nBy ownership of the data telemetry model, a transitioning PM bridges the gap between raw database schemas and strategic business impact, proving value before they even get the title."
+    },
+    {
+      "title": "Agile Backlog Grooming: Sizing Tickets Without Friction",
+      "slug": "backlog-grooming-without-friction",
+      "date": "2026-06-18",
+      "category": "Agile Delivery",
+      "tags": ["Agile", "Scrum", "Grooming", "Jira"],
+      "readingTime": "4 min read",
+      "featured": false,
+      "content": "Backlog grooming is notorious for engineering-product misalignment. Engineers feel they are handed ambiguous specifications, while product managers feel technical estimates are artificially inflated.\n\nTo bridge this operational friction, PMs should shift from presenting finished requirements to collaborative story refinement sessions.\n\n### The Sizing Strategy\n1. **Define Clear Acceptance Criteria**: Use the Given-When-Then format to remove ambiguity.\n2. **Break Down Epics Early**: If a story is estimated above 8 story points, it is an epic that must be split.\n3. **Map Technical Telemetry Needs**: Define database log hooks on the ticket itself, so engineers do not treat it as an afterthought.\n\nBy introducing transparent, metric-aligned sizing frames, teams can reduce sprint planning times from 4 hours to 1.5 hours."
+    },
+    {
+      "title": "Uncovering User Friction: A Data-First Discovery Framework",
+      "slug": "data-first-user-discovery",
+      "date": "2026-05-10",
+      "category": "Product Discovery",
+      "tags": ["Discovery", "UX", "Metrics"],
+      "readingTime": "6 min read",
+      "featured": false,
+      "content": "Traditional user research is qualitative—user interviews, focus groups, and prototype tests. While these are critical, they can be slow and subject to selection bias. A data-first discovery framework combines quantitative telemetry signals with focused customer interviews.\n\n### Step 1: Funnel Dropoff Diagnostics\nBefore interviewing users, analyze the product funnel telemetry to see exactly where drop-offs happen. Is it in the initial account setup step? Or does the user get stuck on the integration page?\n\n### Step 2: Cohort Behavioral Analysis\nCompare the behavior of users who successfully complete onboarding with those who drop off. Do active users complete a specific action within their first 24 hours? In growth engineering, this is often called the 'Aha! moment'.\n\n### Step 3: Targeted Interviews\nOnce the drop-off step is isolated, target interviews specifically to users who experienced that bottleneck. Ask why they paused, mapping telemetry anomalies to real-world friction. This combined strategy ensures you are solving high-leverage product problems."
+    }
+  ]
+}

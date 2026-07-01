@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useState, useEffect } from "react";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform, useReducedMotion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 // ----------------------------------------------------
@@ -15,6 +15,7 @@ interface MagneticProps {
 
 export function Magnetic({ children, range = 60, actionStrength = 0.35 }: MagneticProps) {
   const ref = useRef<HTMLElement>(null);
+  const shouldReduce = useReducedMotion();
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -24,7 +25,7 @@ export function Magnetic({ children, range = 60, actionStrength = 0.35 }: Magnet
   const springY = useSpring(y, springConfig);
 
   const handleMouseMove = (e: MouseEvent) => {
-    if (!ref.current) return;
+    if (shouldReduce || !ref.current) return;
     const { clientX, clientY } = e;
     const { left, top, width, height } = ref.current.getBoundingClientRect();
 
@@ -83,11 +84,12 @@ interface CardLiftProps {
 
 export function CardLift({ children, className, maxTilt = 10 }: CardLiftProps) {
   const cardRef = useRef<HTMLDivElement>(null);
+  const shouldReduce = useReducedMotion();
   const [rotateX, setRotateX] = useState(0);
   const [rotateY, setRotateY] = useState(0);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!cardRef.current) return;
+    if (shouldReduce || !cardRef.current) return;
     const card = cardRef.current;
     const rect = card.getBoundingClientRect();
 
@@ -169,10 +171,13 @@ interface StaggerItemProps {
 }
 
 export function StaggerItem({ children, className, yOffset = 20 }: StaggerItemProps) {
+  const shouldReduce = useReducedMotion();
+  const offset = shouldReduce ? 0 : yOffset;
+
   return (
     <motion.div
       variants={{
-        hidden: { opacity: 0, y: yOffset },
+        hidden: { opacity: 0, y: offset },
         visible: {
           opacity: 1,
           y: 0,

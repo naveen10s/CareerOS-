@@ -102,5 +102,62 @@
       "relevance": "Cloud infrastructure literacy for product decisions involving data pipelines, SaaS architecture, and scalability.",
       "certificate": true
     }
+  ],
+  "books": [
+    {
+      "id": "book-1",
+      "title": "Inspired",
+      "author": "Marty Cagan",
+      "status": "completed",
+      "category": "Product Strategy",
+      "relevance": "Core product management foundation: defining value, usability, feasibility, and viability."
+    },
+    {
+      "id": "book-2",
+      "title": "Escaping the Build Trap",
+      "author": "Melissa Perri",
+      "status": "reading",
+      "category": "Product Operations",
+      "relevance": "Shifting organization focus from outputs (features shipped) to outcomes (real user value)."
+    },
+    {
+      "id": "book-3",
+      "title": "Continuous Discovery Habits",
+      "author": "Teresa Torres",
+      "status": "planned",
+      "category": "Product Discovery",
+      "relevance": "Structured customer interviews and prototype feedback loops to co-create solutions."
+    },
+    {
+      "id": "book-4",
+      "title": "Designing Data-Intensive Applications",
+      "author": "Martin Kleppmann",
+      "status": "completed",
+      "category": "System Design",
+      "relevance": "Deep-dives data schemas, indexes, and ETL pipes — critical for telemetry PM success."
+    }
+  ],
+  "roadmap": [
+    {
+      "id": "road-1",
+      "title": "Advanced Growth Product Analytics (Amplitude)",
+      "quarter": "Q3 2026",
+      "skills": ["Cohort Retention Analysis", "Conversion Funnel Optimization"],
+      "status": "planned"
+    },
+    {
+      "id": "road-2",
+      "title": "A/B Testing Methodology & Statistical Significance",
+      "quarter": "Q4 2026",
+      "skills": ["Hypothesis Testing", "Sample Size Calculation"],
+      "status": "planned"
+    },
+    {
+      "id": "road-3",
+      "title": "AI Product Design: LLM Workflows & Integration",
+      "quarter": "Q1 2027",
+      "skills": ["Prompt Engineering", "Semantic Search Specs"],
+      "status": "planned"
+    }
   ]
 }

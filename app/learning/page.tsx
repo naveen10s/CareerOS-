@@ -303,53 +303,172 @@ export default function LearningPage() {
           </div>
         </div>
 
-        {/* Certifications earned section */}
+        {/* Certifications earned & Certificate Gallery section */}
         {certs.length > 0 && (
           <section className="space-y-4">
             <div className="flex items-center gap-2">
               <Award className="text-warning h-4 w-4" />
               <span className="text-foreground font-mono text-[10px] font-bold uppercase">
-                Certifications Earned
+                Certifications Gallery & Verification
               </span>
             </div>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               {certs.map((cert, i) => (
                 <motion.div
-                  key={i}
+                  key={cert.name}
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: i * 0.07 }}
+                  whileHover={{ y: -2 }}
+                  className="group"
                 >
-                  <Card variant="solid" className="flex items-start gap-3 p-4">
-                    <div className="bg-warning/10 border-warning/20 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border">
-                      <Award className="text-warning h-4 w-4" />
+                  <Card
+                    variant="solid"
+                    className="hover:border-warning/30 flex items-start gap-4 p-5 transition-all"
+                  >
+                    <div className="bg-warning/10 border-warning/20 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border transition-transform group-hover:scale-105">
+                      <Award className="text-warning h-5 w-5" />
                     </div>
-                    <div className="min-w-0 flex-1">
-                      <h4 className="text-foreground text-xs font-bold">{cert.name}</h4>
-                      <p className="text-muted-foreground mt-0.5 font-mono text-[9px]">
-                        {cert.issuer} · {cert.date}
+                    <div className="min-w-0 flex-1 space-y-1">
+                      <h4 className="text-foreground text-xs leading-snug font-bold">
+                        {cert.name}
+                      </h4>
+                      <p className="text-muted-foreground font-mono text-[9px]">
+                        {cert.issuer} · Issued {cert.date}
                       </p>
                       {cert.credentialId && (
-                        <p className="text-muted-foreground/60 mt-0.5 font-mono text-[8px]">
+                        <code className="bg-secondary/40 text-muted-foreground/90 border-border/10 rounded border px-1.5 py-0.5 font-mono text-[8px]">
                           ID: {cert.credentialId}
-                        </p>
+                        </code>
                       )}
+
+                      {/* Visual Mock Certificate Frame */}
+                      <div className="bg-background/40 border-border/10 mt-3 origin-top-left scale-95 overflow-hidden rounded-lg border p-2 pt-3 text-center transition-transform group-hover:scale-100">
+                        <div className="border-warning/25 rounded border p-1">
+                          <span className="text-warning block font-mono text-[7px] font-bold tracking-widest uppercase">
+                            Official Accreditation
+                          </span>
+                          <span className="text-foreground mt-1 block font-serif text-[8px] italic">
+                            Alex Mercer
+                          </span>
+                          <span className="text-muted-foreground/80 mt-0.5 block text-[6px]">
+                            validated credentials & verified metadata
+                          </span>
+                        </div>
+                      </div>
                     </div>
                     {cert.credentialUrl && (
                       <a
                         href={cert.credentialUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-primary hover:text-primary/80 transition-colors"
-                        aria-label={`View ${cert.name} credential`}
+                        className="text-primary hover:text-primary/80 pt-1 transition-colors"
+                        aria-label={`Verify ${cert.name} online`}
                       >
-                        <ExternalLink className="h-3.5 w-3.5" />
+                        <ExternalLink className="h-4 w-4" />
                       </a>
                     )}
                   </Card>
                 </motion.div>
               ))}
             </div>
+          </section>
+        )}
+
+        {/* Books & Reading Hub Section */}
+        {((learningData as any).books || []).length > 0 && (
+          <section className="space-y-4">
+            <div className="flex items-center gap-2">
+              <BookOpen className="text-primary h-4 w-4" />
+              <span className="text-foreground font-mono text-[10px] font-bold uppercase">
+                Product & Tech Reading Stack
+              </span>
+            </div>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+              {(learningData as any).books.map((book: any, i: number) => (
+                <motion.div
+                  key={book.id}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: i * 0.05 }}
+                >
+                  <Card
+                    variant="solid"
+                    className="flex h-full flex-col justify-between space-y-3 p-4"
+                  >
+                    <div className="space-y-1">
+                      <div className="flex items-center justify-between">
+                        <Badge variant="outline" className="font-mono text-[7px] uppercase">
+                          {book.category}
+                        </Badge>
+                        <Badge
+                          variant="secondary"
+                          className={cn(
+                            "font-mono text-[7px] uppercase",
+                            book.status === "completed" &&
+                              "text-success bg-success/5 border-success/15",
+                            book.status === "reading" &&
+                              "text-warning bg-warning/5 border-warning/15",
+                            book.status === "planned" &&
+                              "text-muted-foreground bg-secondary/5 border-border/15",
+                          )}
+                        >
+                          {book.status === "reading" ? "Reading Now" : book.status}
+                        </Badge>
+                      </div>
+                      <h4 className="text-foreground text-xs leading-snug font-bold">
+                        {book.title}
+                      </h4>
+                      <p className="text-muted-foreground font-mono text-[9px]">by {book.author}</p>
+                      <p className="text-muted-foreground pt-1 text-[10px] leading-relaxed">
+                        {book.relevance}
+                      </p>
+                    </div>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Roadmap Checklist Section */}
+        {((learningData as any).roadmap || []).length > 0 && (
+          <section className="space-y-4">
+            <div className="flex items-center gap-2">
+              <TrendingUp className="text-success h-4 w-4" />
+              <span className="text-foreground font-mono text-[10px] font-bold uppercase">
+                Target Transition Learning Roadmap
+              </span>
+            </div>
+            <Card variant="solid" className="p-5">
+              <div className="border-border/40 relative space-y-6 border-l-2 pl-4">
+                {(learningData as any).roadmap.map((road: any, i: number) => (
+                  <div key={road.id} className="relative">
+                    {/* Circle Node indicator */}
+                    <span className="bg-background border-border/50 absolute top-1 -left-[23px] flex h-4.5 w-4.5 items-center justify-center rounded-full border">
+                      <span className="bg-primary/60 h-2 w-2 rounded-full" />
+                    </span>
+                    <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-center">
+                      <div>
+                        <h4 className="text-foreground text-xs font-bold">{road.title}</h4>
+                        <div className="mt-1 flex flex-wrap gap-1.5">
+                          {road.skills.map((skill: string) => (
+                            <Badge key={skill} variant="outline" className="font-mono text-[8px]">
+                              {skill}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                      <div className="shrink-0">
+                        <span className="bg-secondary text-foreground border-border/10 rounded border px-2 py-0.5 font-mono text-[9px]">
+                          {road.quarter}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </Card>
           </section>
         )}
       </div>

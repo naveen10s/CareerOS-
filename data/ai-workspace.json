@@ -1,0 +1,228 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AI Workspace",
+  "type": "object",
+  "properties": {
+    "tools": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "type": { "type": "string" },
+          "description": { "type": "string" },
+          "efficiencyGain": { "type": "string" }
+        }
+      }
+    },
+    "prompts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "title": { "type": "string" },
+          "category": { "type": "string" },
+          "template": { "type": "string" },
+          "description": { "type": "string" },
+          "favorite": { "type": "boolean" },
+          "usageCount": { "type": "integer" }
+        }
+      }
+    },
+    "workflows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "status": { "type": "string" },
+          "stepsCount": { "type": "integer" },
+          "trigger": { "type": "string" },
+          "steps": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "stepNumber": { "type": "integer" },
+                "name": { "type": "string" },
+                "description": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "automation": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "status": { "type": "string" },
+          "frequency": { "type": "string" },
+          "nextRun": { "type": "string" },
+          "lastSuccess": { "type": "string" }
+        }
+      }
+    },
+    "learningTimeline": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "date": { "type": "string" },
+          "event": { "type": "string" },
+          "category": { "type": "string" },
+          "description": { "type": "string" }
+        }
+      }
+    }
+  },
+  "example": {
+    "tools": [
+      {
+        "id": "tool-1",
+        "name": "Telemetry Spec Generator",
+        "type": "LLM Assistant",
+        "description": "Auto-generates SQL analytical telemetry logging specs from product requirement narratives.",
+        "efficiencyGain": "80% spec authoring time saved"
+      },
+      {
+        "id": "tool-2",
+        "name": "Star Story Builder",
+        "type": "STAR Generator",
+        "description": "Refines raw experience logs into high-impact STAR behavioral interview stories.",
+        "efficiencyGain": "100% structured alignment"
+      },
+      {
+        "id": "tool-3",
+        "name": "ATS CV Parser",
+        "type": "Resume Optimizer",
+        "description": "Scans draft resume text against target PM job descriptions to pinpoint skill match gaps.",
+        "efficiencyGain": "45% boost in matching scores"
+      }
+    ],
+    "prompts": [
+      {
+        "id": "prompt-1",
+        "title": "SQL Telemetry Log Spec",
+        "category": "Data & Telemetry",
+        "template": "Write a telemetry database event log schema for tracking [feature name]. The spec must include database table columns, triggering events, constraints, and mock query validation.",
+        "description": "Generates analytical telemetry logging schemas directly mapped for product and data engineers.",
+        "favorite": true,
+        "usageCount": 142
+      },
+      {
+        "id": "prompt-2",
+        "title": "Business Requirements Document to User Stories",
+        "category": "Agile Delivery",
+        "template": "Analyze this business requirement brief and convert it into a structured set of 5-8 User Stories. Each story must have clear Acceptance Criteria in Given-When-Then format.",
+        "description": "Translates high-level BA requirement briefs into actionable developer tickets.",
+        "favorite": true,
+        "usageCount": 98
+      },
+      {
+        "id": "prompt-3",
+        "title": "PM Behavioral STAR Interview Refiner",
+        "category": "Career Transition",
+        "template": "I want to explain a time where I [describe situation]. Reframe this raw narrative into a Situation, Task, Action, and Result (STAR) structure highlighting product decisions and cross-functional leadership.",
+        "description": "Reconstructs business analyst operational achievements into high-value PM metrics.",
+        "favorite": false,
+        "usageCount": 54
+      },
+      {
+        "id": "prompt-4",
+        "title": "Now-Next-Later Roadmap Structurer",
+        "category": "Product Strategy",
+        "template": "I have these 10 feature backlog items: [list features]. Categorize them into a Now-Next-Later prioritization framework based on ease of implementation and high customer impact.",
+        "description": "Assists in early-stage strategic planning and backlog organization.",
+        "favorite": false,
+        "usageCount": 33
+      }
+    ],
+    "workflows": [
+      {
+        "id": "workflow-1",
+        "name": "BA Requirement to Engineering Sizing Sync",
+        "status": "active",
+        "stepsCount": 3,
+        "trigger": "New markdown BRD uploaded",
+        "steps": [
+          {
+            "stepNumber": 1,
+            "name": "ATS CV Parser",
+            "description": "Extract raw system requirements and telemetry hooks."
+          },
+          {
+            "stepNumber": 2,
+            "name": "Story Converter",
+            "description": "Auto-generate developer user stories with acceptance criteria."
+          },
+          {
+            "stepNumber": 3,
+            "name": "Slack Alert",
+            "description": "Send formatted backlog tickets directly to engineering leads."
+          }
+        ]
+      },
+      {
+        "id": "workflow-2",
+        "name": "STAR Interview Preparation Sync",
+        "status": "draft",
+        "stepsCount": 2,
+        "trigger": "New experience timeline addition",
+        "steps": [
+          {
+            "stepNumber": 1,
+            "name": "STAR Story Builder",
+            "description": "Extract PM metrics from experience milestones."
+          },
+          {
+            "stepNumber": 2,
+            "name": "Voice Practice Guide",
+            "description": "Generate behavioral interview questions based on the STAR outputs."
+          }
+        ]
+      }
+    ],
+    "automation": [
+      {
+        "id": "auto-1",
+        "name": "SQL Telemetry Anomaly Scan",
+        "status": "running",
+        "frequency": "Daily",
+        "nextRun": "Tomorrow, 08:00 AM",
+        "lastSuccess": "Today, 08:00 AM"
+      },
+      {
+        "id": "auto-2",
+        "name": "LinkedIn PM Skill Gaps Report",
+        "status": "scheduled",
+        "frequency": "Weekly",
+        "nextRun": "Monday, 09:00 AM",
+        "lastSuccess": "Last Monday, 09:00 AM"
+      }
+    ],
+    "learningTimeline": [
+      {
+        "id": "ai-learn-1",
+        "date": "2026-03",
+        "event": "Prompt Engineering Certification",
+        "category": "Learning",
+        "description": "Completed advanced prompt engineering course focusing on LLM system parameters, chain-of-thought, and few-shot templates."
+      },
+      {
+        "id": "ai-learn-2",
+        "date": "2026-05",
+        "event": "Automated Telemetry Spec Engine Deploy",
+        "category": "Project",
+        "description": "Deployed automated workflow to convert raw telemetry request docs into validated database mapping specs."
+      }
+    ]
+  }
+}

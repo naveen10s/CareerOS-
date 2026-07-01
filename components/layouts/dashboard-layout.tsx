@@ -15,6 +15,9 @@ import {
   Search,
   Bell,
   Settings,
+  Cpu,
+  Rss,
+  Globe,
 } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
@@ -94,6 +97,24 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
       href: "/learning",
       icon: <BookOpen className="h-4 w-4" />,
       active: pathname === "/learning",
+    },
+    {
+      label: "AI Workspace",
+      href: "/ai-workspace",
+      icon: <Cpu className="h-4 w-4" />,
+      active: pathname === "/ai-workspace",
+    },
+    {
+      label: "LinkedIn Center",
+      href: "/linkedin",
+      icon: <Globe className="h-4 w-4" />,
+      active: pathname === "/linkedin",
+    },
+    {
+      label: "Blog Engine",
+      href: "/blog",
+      icon: <Rss className="h-4 w-4" />,
+      active: pathname === "/blog",
     },
     {
       label: "Resume",
@@ -184,7 +205,11 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
 
               {/* Scrollable Workspaces */}
               <div className="flex flex-1 flex-col justify-between overflow-y-auto">
-                <main className="flex w-full flex-1 flex-col">
+                <main
+                  id="main-content"
+                  tabIndex={-1}
+                  className="flex w-full flex-1 flex-col outline-none"
+                >
                   {/* Global Page Breadcrumb Header */}
                   <div className="px-6 pt-6 md:px-8">
                     <Breadcrumb />
