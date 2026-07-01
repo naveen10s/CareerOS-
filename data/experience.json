@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Experience",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": { "type": "string" },
+      "role": { "type": "string" },
+      "company": { "type": "string" },
+      "location": { "type": "string" },
+      "startDate": { "type": "string" },
+      "endDate": { "type": "string" },
+      "isCurrent": { "type": "boolean" },
+      "responsibilities": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "pmKeywords": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "baKeywords": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "impactMetrics": {
+        "type": "array",
+        "items": { "type": "string" }
+      }
+    }
+  },
+  "example": [
+    {
+      "id": "exp-1",
+      "role": "Senior Business Analyst",
+      "company": "TechInnovate Inc.",
+      "location": "Boston, MA",
+      "startDate": "2024-03",
+      "endDate": "Present",
+      "isCurrent": true,
+      "responsibilities": [
+        "Led SQL data analysis to define customer onboarding friction points, resulting in a product redesign workflow.",
+        "Collaborated with product designers to map user journey flows and draft feature specifications.",
+        "Managed sprint backlogs and prioritized user stories alongside technical product managers."
+      ],
+      "pmKeywords": [
+        "Sprint Planning",
+        "User Journey Mapping",
+        "Prioritization Frameworks",
+        "Cross-functional Alignment"
+      ],
+      "baKeywords": ["SQL", "Process Modeling", "Requirements Elicitation", "Gap Analysis"],
+      "impactMetrics": [
+        "Reduced onboarding friction by 22% through process mapping",
+        "Author of 14 specifications adopted directly into the engineering backlog"
+      ]
+    }
+  ]
+}

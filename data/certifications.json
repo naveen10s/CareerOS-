@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Certifications",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "name": { "type": "string" },
+      "issuer": { "type": "string" },
+      "date": { "type": "string" },
+      "credentialId": { "type": "string" },
+      "credentialUrl": { "type": "string" }
+    }
+  },
+  "example": [
+    {
+      "name": "Certified Scrum Product Owner (CSPO)",
+      "issuer": "Scrum Alliance",
+      "date": "2025-01",
+      "credentialId": "CSPO-998877",
+      "credentialUrl": "https://bcert.me/example"
+    }
+  ]
+}

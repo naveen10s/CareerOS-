@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Courses",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "name": { "type": "string" },
+      "platform": { "type": "string" },
+      "completionDate": { "type": "string" },
+      "pmFocus": { "type": "boolean" },
+      "skillsCovered": {
+        "type": "array",
+        "items": { "type": "string" }
+      }
+    }
+  },
+  "example": [
+    {
+      "name": "Product Management Foundations",
+      "platform": "Coursera / University of Maryland",
+      "completionDate": "2025-06",
+      "pmFocus": true,
+      "skillsCovered": ["Customer Discovery", "Prototyping", "MVP Definition"]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Achievements",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": { "type": "string" },
+      "title": { "type": "string" },
+      "description": { "type": "string" },
+      "metricImpact": { "type": "string" },
+      "category": { "type": "string" }
+    }
+  },
+  "example": [
+    {
+      "id": "ach-1",
+      "title": "Process Optimization Award",
+      "description": "Awarded by CTO for engineering-business collaboration on automating API integration checks.",
+      "metricImpact": "Eliminated manual validation, saving 40 engineering hours per sprint",
+      "category": "Cross-Functional Leadership"
+    }
+  ]
+}

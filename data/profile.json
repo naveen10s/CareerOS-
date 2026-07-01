@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Profile",
+  "description": "Schema and empty profile details for CareerOS BA to PM transition profile",
+  "type": "object",
+  "properties": {
+    "name": { "type": "string", "default": "" },
+    "headline": { "type": "string", "default": "" },
+    "currentRole": { "type": "string", "default": "" },
+    "targetRole": { "type": "string", "default": "" },
+    "summary": { "type": "string", "default": "" },
+    "avatar": { "type": "string", "default": "" },
+    "email": { "type": "string", "format": "email", "default": "" },
+    "location": { "type": "string", "default": "" },
+    "strengths": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": []
+    },
+    "transitionNarrative": {
+      "type": "object",
+      "properties": {
+        "whyProductManagement": { "type": "string", "default": "" },
+        "transferableSkills": {
+          "type": "array",
+          "items": { "type": "string" },
+          "default": []
+        }
+      }
+    }
+  },
+  "example": {
+    "name": "Alex Mercer",
+    "headline": "Business Analyst specializing in Data Analytics | Aspiring Product Manager",
+    "currentRole": "Senior Business Analyst",
+    "targetRole": "Associate Product Manager",
+    "summary": "Data-driven analyst with 3+ years of experience leading cross-functional process optimizations. Transitioning to product management to apply user-centric design principles and product strategy to complex software problems.",
+    "avatar": "/assets/avatar.jpg",
+    "email": "alex.mercer@careeros.dev",
+    "location": "San Francisco, CA",
+    "strengths": [
+      "Data-driven Decision Making",
+      "Requirement Gathering",
+      "Stakeholder Communication",
+      "SQL & Analytics"
+    ],
+    "transitionNarrative": {
+      "whyProductManagement": "Transitioning to PM to own the product lifecycle end-to-end, moving from 'how to build' and 'what did we do' to 'what should we build and why'.",
+      "transferableSkills": [
+        "Data-driven roadmap prioritization",
+        "Stakeholder alignment & requirement translations",
+        "Defining metrics and analyzing product performance"
+      ]
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Projects",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": { "type": "string" },
+      "title": { "type": "string" },
+      "summary": { "type": "string" },
+      "challenge": { "type": "string" },
+      "solution": { "type": "string" },
+      "role": { "type": "string" },
+      "technologies": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "pmAspects": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "baAspects": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "metrics": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "links": {
+        "type": "object",
+        "properties": {
+          "github": { "type": "string" },
+          "live": { "type": "string" }
+        }
+      }
+    }
+  },
+  "example": [
+    {
+      "id": "proj-1",
+      "title": "Internal Analytics Dashboard Redesign",
+      "summary": "Re-architected the client telemetry dashboard to support executive decision making.",
+      "challenge": "Product teams lacked immediate access to user activation cohorts, leading to gut-feel roadmap additions.",
+      "solution": "Defined success metrics, conducted internal user interviews, and collaborated with frontend engineers to build a custom React-based metrics dashboard.",
+      "role": "Lead Analyst & Acting Product Owner",
+      "technologies": ["React", "SQL", "Tableau API", "Node.js"],
+      "pmAspects": ["User Interviewing", "Telemetry Spec Drafting", "Milestone Planning"],
+      "baAspects": ["Cohort SQL construction", "Data Schema definition", "Process Flow mapping"],
+      "metrics": [
+        "Dashboard adopted by 100% of product leadership within 3 weeks",
+        "Average decision latency reduced from 5 days to 2 hours"
+      ],
+      "links": {
+        "github": "https://github.com/career-os/analytics-dashboard",
+        "live": "https://dashboard.careeros.dev"
+      }
+    }
+  ]
+}

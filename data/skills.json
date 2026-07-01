@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Skills",
+  "type": "object",
+  "properties": {
+    "productManagement": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "level": { "type": "integer", "minimum": 1, "maximum": 5 },
+          "transferableFromBA": { "type": "boolean" },
+          "description": { "type": "string" }
+        }
+      }
+    },
+    "businessAnalysis": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "level": { "type": "integer", "minimum": 1, "maximum": 5 },
+          "description": { "type": "string" }
+        }
+      }
+    },
+    "technical": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "level": { "type": "integer", "minimum": 1, "maximum": 5 }
+        }
+      }
+    }
+  },
+  "example": {
+    "productManagement": [
+      {
+        "name": "Product Strategy & Roadmapping",
+        "level": 3,
+        "transferableFromBA": true,
+        "description": "Translating complex operational problems into product roadmap milestones."
+      },
+      {
+        "name": "User Research & Testing",
+        "level": 3,
+        "transferableFromBA": false,
+        "description": "Directly testing prototypes with users to uncover friction points."
+      }
+    ],
+    "businessAnalysis": [
+      {
+        "name": "Requirements Elicitation",
+        "level": 5,
+        "description": "Facilitating multi-stakeholder workshops to determine project constraints and goals."
+      },
+      {
+        "name": "SQL & Data Analytics",
+        "level": 4,
+        "description": "Constructing complex queries for user segment profiling and cohort tracking."
+      }
+    ],
+    "technical": [
+      { "name": "Next.js & TypeScript", "level": 3 },
+      { "name": "REST APIs", "level": 4 },
+      { "name": "SQL/PostgreSQL", "level": 5 }
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Timeline",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": { "type": "string" },
+      "year": { "type": "string" },
+      "quarter": { "type": "string" },
+      "event": { "type": "string" },
+      "details": { "type": "string" },
+      "milestoneType": {
+        "type": "string",
+        "enum": ["career", "education", "pm-transition", "project-launch"]
+      }
+    }
+  },
+  "example": [
+    {
+      "id": "time-1",
+      "year": "2024",
+      "quarter": "Q3",
+      "event": "Took ownership of core analytics product metrics roadmap",
+      "details": "Initiated research into internal telemetry bottlenecks and pitched redesign scope to Director of Engineering.",
+      "milestoneType": "pm-transition"
+    }
+  ]
+}

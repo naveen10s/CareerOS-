@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SocialLinks",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "platform": { "type": "string" },
+      "url": { "type": "string" },
+      "handle": { "type": "string" },
+      "icon": { "type": "string" }
+    }
+  },
+  "example": [
+    {
+      "platform": "LinkedIn",
+      "url": "https://linkedin.com/in/alex-mercer",
+      "handle": "alex-mercer",
+      "icon": "linkedin"
+    },
+    {
+      "platform": "GitHub",
+      "url": "https://github.com/career-os",
+      "handle": "career-os",
+      "icon": "github"
+    }
+  ]
+}
