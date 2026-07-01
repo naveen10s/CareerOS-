@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
-import { LenisProvider } from "@/components/lenis-provider";
+import { AppProvider } from "@/providers/app-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,14 +30,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="bg-background text-foreground duration-normal ease-premium flex min-h-full flex-col transition-colors">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <LenisProvider>{children}</LenisProvider>
-        </ThemeProvider>
+        <AppProvider>{children}</AppProvider>
       </body>
     </html>
   );

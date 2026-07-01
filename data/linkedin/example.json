@@ -1,0 +1,11 @@
+{
+  "headline": "Senior Business Analyst | Transitioning to Product Management",
+  "about": "I translate telemetry queries into roadmaps.",
+  "experience": [
+    {
+      "id": "exp-1",
+      "bullets": ["Led dashboard optimization query builds.", "Facilitated PM agile sprints."]
+    }
+  ],
+  "featured": ["proj-1"]
+}

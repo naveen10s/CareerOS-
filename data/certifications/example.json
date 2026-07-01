@@ -1,0 +1,10 @@
+[
+  {
+    "id": "cert-1",
+    "name": "Certified Scrum Product Owner (CSPO)",
+    "issuer": "Scrum Alliance",
+    "date": "2025-01",
+    "credentialId": "CSPO-9988",
+    "credentialUrl": "https://bcert.me/example"
+  }
+]

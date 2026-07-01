@@ -1,0 +1,6 @@
+{
+  "dataMapping": ["Source-to-target maps", "ETL schemas"],
+  "processModeling": ["BPMN flows", "UML swimlane structures"],
+  "requirementsElicitation": ["Stakeholder workshops", "User interviews"],
+  "gapAnalysis": ["As-Is vs To-Be matrix"]
+}

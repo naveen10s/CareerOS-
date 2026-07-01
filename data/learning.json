@@ -8,19 +8,99 @@
       "id": { "type": "string" },
       "topic": { "type": "string" },
       "platform": { "type": "string" },
+      "category": { "type": "string" },
       "progress": { "type": "integer", "minimum": 0, "maximum": 100 },
+      "status": { "type": "string" },
       "targetDate": { "type": "string" },
-      "relevance": { "type": "string" }
+      "completedDate": { "type": "string" },
+      "relevance": { "type": "string" },
+      "certificate": { "type": "boolean" }
     }
   },
   "example": [
     {
       "id": "learn-1",
-      "topic": "Interaction Design (UI/UX Principles)",
-      "platform": "Interaction Design Foundation",
-      "progress": 45,
+      "topic": "Certified Scrum Product Owner (CSPO)",
+      "platform": "Scrum Alliance",
+      "category": "certification",
+      "progress": 100,
+      "status": "completed",
+      "targetDate": "2025-01",
+      "completedDate": "2025-01",
+      "relevance": "Formal PM methodology accreditation — Agile delivery, backlog management, and sprint ownership.",
+      "certificate": true
+    },
+    {
+      "id": "learn-2",
+      "topic": "Google Data Analytics Professional Certificate",
+      "platform": "Coursera (Google)",
+      "category": "certification",
+      "progress": 100,
+      "status": "completed",
+      "targetDate": "2023-06",
+      "completedDate": "2023-05",
+      "relevance": "Structured data analysis, SQL querying, Tableau visualisation, and business storytelling with data.",
+      "certificate": true
+    },
+    {
+      "id": "learn-3",
+      "topic": "Product Management Fundamentals",
+      "platform": "Coursera (University of Virginia)",
+      "category": "course",
+      "progress": 80,
+      "status": "in-progress",
       "targetDate": "2026-08",
-      "relevance": "Translates business requirements into intuitive UI mockup requirements for design teams."
+      "completedDate": "",
+      "relevance": "Product strategy, customer discovery, roadmap prioritisation, and metrics definition for PM role transition.",
+      "certificate": true
+    },
+    {
+      "id": "learn-4",
+      "topic": "SQL Advanced Analytics",
+      "platform": "Udemy",
+      "category": "course",
+      "progress": 100,
+      "status": "completed",
+      "targetDate": "2023-03",
+      "completedDate": "2023-02",
+      "relevance": "Window functions, CTEs, performance optimisation, and analytical query patterns for product telemetry work.",
+      "certificate": false
+    },
+    {
+      "id": "learn-5",
+      "topic": "Interaction Design Foundations",
+      "platform": "Interaction Design Foundation",
+      "category": "course",
+      "progress": 45,
+      "status": "in-progress",
+      "targetDate": "2026-09",
+      "completedDate": "",
+      "relevance": "Translates business requirements into intuitive UI mockup requirements for design team collaboration.",
+      "certificate": true
+    },
+    {
+      "id": "learn-6",
+      "topic": "TypeScript — Full Course",
+      "platform": "Scrimba",
+      "category": "course",
+      "progress": 65,
+      "status": "in-progress",
+      "targetDate": "2026-08",
+      "completedDate": "",
+      "relevance": "Strengthens technical credibility and enables hands-on prototyping for PM-engineer collaboration.",
+      "certificate": false
+    },
+    {
+      "id": "learn-7",
+      "topic": "AWS Cloud Practitioner (CLF-C02)",
+      "platform": "AWS Training",
+      "category": "certification",
+      "progress": 20,
+      "status": "planned",
+      "targetDate": "2026-12",
+      "completedDate": "",
+      "relevance": "Cloud infrastructure literacy for product decisions involving data pipelines, SaaS architecture, and scalability.",
+      "certificate": true
     }
   ]
 }

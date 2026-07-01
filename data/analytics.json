@@ -1,0 +1,253 @@
+{
+  "kpis": {
+    "projectsCompleted": 4,
+    "yearsExperience": 4,
+    "technologiesUsed": 18,
+    "domainsWorked": 6,
+    "learningHours": 320,
+    "stakeholdersSupported": 24,
+    "processImprovements": 7,
+    "productDeliveries": 3
+  },
+  "careerGrowth": [
+    {
+      "year": "2020",
+      "role": "Junior Business Analyst",
+      "level": 1,
+      "milestone": "First enterprise BA role"
+    },
+    {
+      "year": "2021",
+      "role": "Business Analyst",
+      "level": 2,
+      "milestone": "Led first cross-team requirements workshop"
+    },
+    {
+      "year": "2022",
+      "role": "Senior Business Analyst",
+      "level": 3,
+      "milestone": "Promoted — managed stakeholder alignment across 4 business units"
+    },
+    {
+      "year": "2023",
+      "role": "Senior BA / Acting PM",
+      "level": 4,
+      "milestone": "Took ownership of product roadmap for analytics platform"
+    },
+    {
+      "year": "2024",
+      "role": "Aspiring Product Manager",
+      "level": 5,
+      "milestone": "Completed CSPO — driving PM transition with portfolio evidence"
+    }
+  ],
+  "monthlyLearning": [
+    { "month": "Jan", "hours": 18 },
+    { "month": "Feb", "hours": 22 },
+    { "month": "Mar", "hours": 30 },
+    { "month": "Apr", "hours": 25 },
+    { "month": "May", "hours": 40 },
+    { "month": "Jun", "hours": 35 },
+    { "month": "Jul", "hours": 28 },
+    { "month": "Aug", "hours": 32 },
+    { "month": "Sep", "hours": 42 },
+    { "month": "Oct", "hours": 20 },
+    { "month": "Nov", "hours": 18 },
+    { "month": "Dec", "hours": 10 }
+  ],
+  "technologyUsage": [
+    { "name": "SQL / PostgreSQL", "projects": 4, "category": "databases" },
+    { "name": "Jira", "projects": 4, "category": "tools" },
+    { "name": "Figma", "projects": 3, "category": "design" },
+    { "name": "Tableau", "projects": 3, "category": "analytics" },
+    { "name": "TypeScript", "projects": 2, "category": "programming" },
+    { "name": "Next.js", "projects": 2, "category": "programming" },
+    { "name": "Confluence", "projects": 4, "category": "tools" },
+    { "name": "Miro", "projects": 3, "category": "tools" },
+    { "name": "Recharts", "projects": 2, "category": "programming" },
+    { "name": "Tailwind CSS", "projects": 2, "category": "programming" }
+  ],
+  "skillRadar": [
+    { "category": "Product Strategy", "level": 4 },
+    { "category": "Data Analytics", "level": 5 },
+    { "category": "Stakeholder Mgmt", "level": 4 },
+    { "category": "User Research", "level": 3 },
+    { "category": "Technical Skills", "level": 3 },
+    { "category": "BA & Requirements", "level": 5 },
+    { "category": "Leadership", "level": 4 },
+    { "category": "Agile / Scrum", "level": 4 }
+  ],
+  "domainDistribution": [
+    { "domain": "Analytics", "count": 5, "color": "#6366f1" },
+    { "domain": "Product", "count": 4, "color": "#8b5cf6" },
+    { "domain": "Leadership", "count": 3, "color": "#06b6d4" },
+    { "domain": "Technical", "count": 3, "color": "#10b981" },
+    { "domain": "Business Analysis", "count": 4, "color": "#f59e0b" },
+    { "domain": "UX Research", "count": 2, "color": "#ec4899" }
+  ],
+  "impactMetrics": [
+    {
+      "id": "imp-1",
+      "label": "Reporting Latency Reduction",
+      "value": "95%",
+      "direction": "down",
+      "description": "Reduced telemetry query latency from 5 days to under 2 hours",
+      "category": "performance"
+    },
+    {
+      "id": "imp-2",
+      "label": "Decision Velocity",
+      "value": "12×",
+      "direction": "up",
+      "description": "Product decision cycle accelerated from weekly to sub-2-hour turnaround",
+      "category": "efficiency"
+    },
+    {
+      "id": "imp-3",
+      "label": "Stakeholders Aligned",
+      "value": "24+",
+      "direction": "up",
+      "description": "Managed cross-functional alignment across engineering, design, and executive stakeholders",
+      "category": "leadership"
+    },
+    {
+      "id": "imp-4",
+      "label": "Engineering Hours Saved",
+      "value": "40h/sprint",
+      "direction": "up",
+      "description": "Automated API integration validation eliminating manual checking overhead",
+      "category": "efficiency"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "ach-1",
+      "date": "2025-01",
+      "title": "Certified Scrum Product Owner (CSPO)",
+      "description": "Completed Scrum Alliance certification — formal PM methodology accreditation.",
+      "category": "certification",
+      "icon": "award"
+    },
+    {
+      "id": "ach-2",
+      "date": "2024-09",
+      "title": "Analytics Platform Launch",
+      "description": "Led data architecture and roadmap for real-time analytics cockpit adopted by 100% of product leadership.",
+      "category": "project",
+      "icon": "rocket"
+    },
+    {
+      "id": "ach-3",
+      "date": "2024-03",
+      "title": "Process Optimization Recognition",
+      "description": "CTO recognition for automating API validation saving 40 engineering hours per sprint.",
+      "category": "award",
+      "icon": "star"
+    },
+    {
+      "id": "ach-4",
+      "date": "2023-06",
+      "title": "Senior Business Analyst Promotion",
+      "description": "Promoted to Senior BA — managing multi-unit stakeholder alignment and advanced analytics.",
+      "category": "career",
+      "icon": "trending-up"
+    },
+    {
+      "id": "ach-5",
+      "date": "2023-01",
+      "title": "Google Data Analytics Certificate",
+      "description": "Completed 6-month data analytics professional certificate — Coursera / Google.",
+      "category": "certification",
+      "icon": "book-open"
+    },
+    {
+      "id": "ach-6",
+      "date": "2022-04",
+      "title": "First Cross-Team Product Spec",
+      "description": "Authored first product specification adopted by an engineering team without revision.",
+      "category": "milestone",
+      "icon": "file-text"
+    }
+  ],
+  "learningProgress": [
+    {
+      "name": "CSPO — Scrum Alliance",
+      "type": "certification",
+      "progress": 100,
+      "status": "completed"
+    },
+    {
+      "name": "Google Data Analytics Certificate",
+      "type": "certification",
+      "progress": 100,
+      "status": "completed"
+    },
+    {
+      "name": "Product Management Fundamentals (Coursera)",
+      "type": "course",
+      "progress": 80,
+      "status": "in-progress"
+    },
+    {
+      "name": "SQL Advanced Analytics (Udemy)",
+      "type": "course",
+      "progress": 100,
+      "status": "completed"
+    },
+    {
+      "name": "TypeScript Full Course (Scrimba)",
+      "type": "course",
+      "progress": 65,
+      "status": "in-progress"
+    },
+    {
+      "name": "Next.js 15 (Josh Tried Coding)",
+      "type": "course",
+      "progress": 50,
+      "status": "in-progress"
+    },
+    {
+      "name": "AWS Cloud Practitioner",
+      "type": "certification",
+      "progress": 20,
+      "status": "planned"
+    }
+  ],
+  "activityFeed": [
+    {
+      "id": "act-1",
+      "date": "2025-06",
+      "type": "project",
+      "title": "Built CareerOS Product Platform",
+      "description": "Next.js 15 full-stack PM portfolio built from scratch — Skills, Analytics, Projects dashboards."
+    },
+    {
+      "id": "act-2",
+      "date": "2025-01",
+      "type": "certification",
+      "title": "Achieved CSPO Certification",
+      "description": "Scrum Alliance Certified Scrum Product Owner accreditation earned."
+    },
+    {
+      "id": "act-3",
+      "date": "2024-09",
+      "type": "milestone",
+      "title": "Analytics Dashboard Shipped",
+      "description": "Real-time analytics cockpit adopted by 100% of product leadership at TechInnovate."
+    },
+    {
+      "id": "act-4",
+      "date": "2024-03",
+      "type": "award",
+      "title": "Process Automation Recognition",
+      "description": "CTO recognition for eliminating 40 engineering hours per sprint via API validation automation."
+    },
+    {
+      "id": "act-5",
+      "date": "2023-06",
+      "type": "career",
+      "title": "Promoted to Senior Business Analyst",
+      "description": "Multi-unit stakeholder management responsibilities and advanced analytics ownership."
+    }
+  ]
+}

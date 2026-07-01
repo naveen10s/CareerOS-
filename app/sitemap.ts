@@ -10,10 +10,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/projects",
     "/product-lab",
     "/analytics",
-    "/skills",
     "/learning",
     "/resume",
-    "/blog",
     "/contact",
   ].map((route) => ({
     url: `${siteConfig.url}${route}`,

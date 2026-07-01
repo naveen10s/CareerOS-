@@ -1,0 +1,22 @@
+{
+  "hero": {
+    "title": "Career Operating System Spec",
+    "sub": "SaaS interface demonstrating analytical to PM transitions."
+  },
+  "journey": {
+    "timelineIds": ["time-1"]
+  },
+  "projects": {
+    "displayIds": ["proj-1"]
+  },
+  "dashboard": {
+    "chartType": "bar",
+    "showMetricIds": ["met-1"]
+  },
+  "analytics": {
+    "funnelId": "telemetry-cohort"
+  },
+  "learning": {
+    "currentTopic": "User Experience Design"
+  }
+}

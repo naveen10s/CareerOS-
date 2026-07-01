@@ -1,0 +1,9 @@
+[
+  {
+    "id": "met-1",
+    "metric": "Telemetry Latency Funnel",
+    "value": "2 hours",
+    "improvement": "-95%",
+    "context": "ETL optimization and denormalizing reporting tables."
+  }
+]

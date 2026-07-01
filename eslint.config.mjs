@@ -3,6 +3,9 @@ import eslintConfigPrettier from "eslint-config-prettier";
 
 const eslintConfig = [
   {
+    ignores: [".next/**", "node_modules/**", "scratch/**"],
+  },
+  {
     plugins: {
       "@next/next": nextPlugin,
     },

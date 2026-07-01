@@ -1,0 +1,21 @@
+[
+  {
+    "id": "exp-1",
+    "company": "TechInnovate Solutions",
+    "role": "Senior Business Analyst",
+    "timeline": {
+      "start": "2024-03",
+      "end": "Present",
+      "isCurrent": true
+    },
+    "responsibilities": [
+      "Query telemetry databases to analyze onboarding drops.",
+      "Write product specification documents and sync with engineering."
+    ],
+    "achievements": ["Designed database view schema reducing query latency by 45%."],
+    "businessImpact": ["Onboarding completion rates increased by 22% over 2 quarters."],
+    "technologies": ["SQL", "PostgreSQL", "Tableau", "JIRA"],
+    "stakeholders": ["Engineering Leads", "Product Director", "QA Team"],
+    "metrics": ["22% conversion increase", "45% query latency reduction"]
+  }
+]

@@ -1,0 +1,9 @@
+[
+  {
+    "id": "course-1",
+    "name": "Product Management Foundations",
+    "platform": "Coursera / University of Maryland",
+    "date": "2025-06",
+    "syllabus": ["Customer Discovery", "MVP Definition", "Sprint Execution"]
+  }
+]

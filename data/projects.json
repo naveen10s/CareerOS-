@@ -6,55 +6,207 @@
     "type": "object",
     "properties": {
       "id": { "type": "string" },
+      "slug": { "type": "string" },
       "title": { "type": "string" },
-      "summary": { "type": "string" },
-      "challenge": { "type": "string" },
-      "solution": { "type": "string" },
+      "category": { "type": "string" },
+      "status": { "type": "string" },
+      "duration": { "type": "string" },
+      "teamSize": { "type": "integer" },
       "role": { "type": "string" },
-      "technologies": {
+      "client": { "type": "string" },
+      "problem": { "type": "string" },
+      "businessContext": { "type": "string" },
+      "users": {
         "type": "array",
         "items": { "type": "string" }
       },
-      "pmAspects": {
+      "research": {
         "type": "array",
         "items": { "type": "string" }
       },
-      "baAspects": {
+      "painPoints": {
         "type": "array",
         "items": { "type": "string" }
       },
+      "requirements": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "userStories": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "prioritization": { "type": "string" },
+      "roadmap": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "phase": { "type": "string" },
+            "deliverables": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          }
+        }
+      },
+      "solution": { "type": "string" },
+      "implementation": { "type": "string" },
+      "challenges": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "decisions": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "title": { "type": "string" },
+            "description": { "type": "string" },
+            "tradeoff": { "type": "string" }
+          }
+        }
+      },
+      "tradeoffs": { "type": "string" },
+      "businessImpact": { "type": "string" },
       "metrics": {
         "type": "array",
         "items": { "type": "string" }
       },
-      "links": {
-        "type": "object",
-        "properties": {
-          "github": { "type": "string" },
-          "live": { "type": "string" }
+      "kpis": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "timeline": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "screenshots": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "techStack": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "tools": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "stakeholders": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": { "type": "string" },
+            "role": { "type": "string" }
+          }
         }
+      },
+      "lessonsLearned": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "futureImprovements": {
+        "type": "array",
+        "items": { "type": "string" }
       }
     }
   },
   "example": [
     {
       "id": "proj-1",
+      "slug": "analytics-dashboard-redesign",
       "title": "Internal Analytics Dashboard Redesign",
-      "summary": "Re-architected the client telemetry dashboard to support executive decision making.",
-      "challenge": "Product teams lacked immediate access to user activation cohorts, leading to gut-feel roadmap additions.",
-      "solution": "Defined success metrics, conducted internal user interviews, and collaborated with frontend engineers to build a custom React-based metrics dashboard.",
+      "category": "Product Infrastructure",
+      "status": "Completed",
+      "duration": "6 Months",
+      "teamSize": 5,
       "role": "Lead Analyst & Acting Product Owner",
-      "technologies": ["React", "SQL", "Tableau API", "Node.js"],
-      "pmAspects": ["User Interviewing", "Telemetry Spec Drafting", "Milestone Planning"],
-      "baAspects": ["Cohort SQL construction", "Data Schema definition", "Process Flow mapping"],
-      "metrics": [
-        "Dashboard adopted by 100% of product leadership within 3 weeks",
-        "Average decision latency reduced from 5 days to 2 hours"
+      "client": "TechInnovate Inc.",
+      "problem": "Product teams lacked immediate access to user activation cohorts, leading to gut-feel roadmap additions and slow iteration.",
+      "businessContext": "TechInnovate's user analytics data reporting was bottlenecked, suffering from query latencies up to 5 days, severely slowing down feature release validations.",
+      "users": ["Product Managers", "UX Designers", "Engineering Directors", "Executive Leaders"],
+      "research": [
+        "Conducted 12 internal user interviews",
+        "Mapped user cohort data access workflows",
+        "Reviewed telemetry tracking tables"
       ],
-      "links": {
-        "github": "https://github.com/career-os/analytics-dashboard",
-        "live": "https://dashboard.careeros.dev"
-      }
+      "painPoints": [
+        "5-day latency in cohort reports",
+        "High SQL query complexity blocks non-technical team members",
+        "No unified dashboard for release metrics"
+      ],
+      "requirements": [
+        "Under 2-hour data reporting latency",
+        "Interactive filters for user activation milestones",
+        "Visual SQL query syntax checker"
+      ],
+      "userStories": [
+        "As a PM, I want to filter user cohorts by sign-up date so that I can validate release dropoffs.",
+        "As a designer, I want to view funnel dropoffs visually so that I can identify friction areas."
+      ],
+      "prioritization": "Used RICE framework to prioritize interactive filtering and SQL builder over automated exports.",
+      "roadmap": [
+        {
+          "phase": "Phase 1: Discovery & API Schema Specs",
+          "deliverables": ["User interview reports", "Telemetry schemas validation"]
+        },
+        {
+          "phase": "Phase 2: Database Query Optimizations",
+          "deliverables": ["Automated ETL setup", "Denormalized database views"]
+        },
+        {
+          "phase": "Phase 3: Front-end Cockpit Build",
+          "deliverables": ["Interactive filters", "Recharts telemetry dashboards"]
+        }
+      ],
+      "solution": "Designed a high-fidelity Next.js analytics cockpit directly consuming denormalized query tables, bringing cohort telemetry sync down to real time.",
+      "implementation": "Leveraged React Hook Form and Recharts widgets for dynamic filtering. Collaborated with 2 backend developers to build specialized reporting views.",
+      "challenges": [
+        "Parsing unstructured historical click data into defined cohort models.",
+        "Mitigating initial dashboard query lag for massive user segments."
+      ],
+      "decisions": [
+        {
+          "title": "Denormalizing Data Views",
+          "description": "Creating flat reporting database tables rather than complex joins.",
+          "tradeoff": "Increases storage costs slightly but eliminates query lag."
+        }
+      ],
+      "tradeoffs": "Sacrificed real-time exports feature in MVP to prioritize latency optimization.",
+      "businessImpact": "Re-architected reporting dashboards to support daily product iterations. Average decision latency reduced from 5 days to 2 hours.",
+      "metrics": [
+        "Dashboard adopted by 100% of product leadership in 3 weeks",
+        "Reporting latencies reduced by 95%"
+      ],
+      "kpis": ["funnel-activation-rate", "dashboard-daily-active-users"],
+      "timeline": [
+        "Month 1: User Discovery & SQL Schema Spec",
+        "Month 3: Backend DB Denormalization",
+        "Month 6: Interactive Dashboard Launch"
+      ],
+      "screenshots": [],
+      "techStack": ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL", "Recharts"],
+      "tools": ["Jira", "Figma", "Tableau API", "Miro"],
+      "stakeholders": [
+        {
+          "name": "Sarah Jenkins",
+          "role": "Director of Engineering"
+        },
+        {
+          "name": "Marcus Vance",
+          "role": "VP of Product"
+        }
+      ],
+      "lessonsLearned": [
+        "Involving backend engineers early in database denormalization schemas prevents API blockers.",
+        "Telemetry definitions must be aligned across business units before sprint planning starts."
+      ],
+      "futureImprovements": [
+        "Adding AI-assisted SQL query builder",
+        "Supporting automated Slack alerts for funnel drops"
+      ]
     }
   ]
 }

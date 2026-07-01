@@ -12,49 +12,128 @@
       "startDate": { "type": "string" },
       "endDate": { "type": "string" },
       "isCurrent": { "type": "boolean" },
-      "responsibilities": {
-        "type": "array",
-        "items": { "type": "string" }
-      },
-      "pmKeywords": {
-        "type": "array",
-        "items": { "type": "string" }
-      },
-      "baKeywords": {
-        "type": "array",
-        "items": { "type": "string" }
-      },
-      "impactMetrics": {
-        "type": "array",
-        "items": { "type": "string" }
-      }
+      "summary": { "type": "string" },
+      "responsibilities": { "type": "array", "items": { "type": "string" } },
+      "pmKeywords": { "type": "array", "items": { "type": "string" } },
+      "baKeywords": { "type": "array", "items": { "type": "string" } },
+      "impactMetrics": { "type": "array", "items": { "type": "string" } },
+      "techStack": { "type": "array", "items": { "type": "string" } }
     }
   },
   "example": [
     {
       "id": "exp-1",
-      "role": "Senior Business Analyst",
+      "role": "Senior Business Analyst / Acting Product Owner",
       "company": "TechInnovate Inc.",
       "location": "Boston, MA",
       "startDate": "2024-03",
       "endDate": "Present",
       "isCurrent": true,
+      "summary": "Led data analytics and product requirements for an enterprise SaaS platform. Owned the product roadmap for the internal analytics cockpit from discovery to launch, reducing reporting latency by 95%.",
       "responsibilities": [
-        "Led SQL data analysis to define customer onboarding friction points, resulting in a product redesign workflow.",
-        "Collaborated with product designers to map user journey flows and draft feature specifications.",
-        "Managed sprint backlogs and prioritized user stories alongside technical product managers."
+        "Authored 14 product specifications adopted directly by engineering without revision",
+        "Designed and led SQL telemetry architecture reducing query latency from 5 days to 2 hours",
+        "Managed sprint backlogs and user story prioritization alongside technical product managers",
+        "Collaborated with UX designers to map customer journey flows and friction points",
+        "Presented product roadmap monthly to VP of Product and Director of Engineering",
+        "Facilitated cross-functional workshops aligning 4 business units on shared metric taxonomy"
       ],
       "pmKeywords": [
         "Sprint Planning",
         "User Journey Mapping",
         "Prioritization Frameworks",
-        "Cross-functional Alignment"
+        "Cross-functional Alignment",
+        "Roadmap Ownership",
+        "Stakeholder Presentations"
       ],
-      "baKeywords": ["SQL", "Process Modeling", "Requirements Elicitation", "Gap Analysis"],
+      "baKeywords": [
+        "SQL",
+        "Process Modeling",
+        "Requirements Elicitation",
+        "Gap Analysis",
+        "ETL Architecture",
+        "Telemetry Design"
+      ],
       "impactMetrics": [
-        "Reduced onboarding friction by 22% through process mapping",
-        "Author of 14 specifications adopted directly into the engineering backlog"
-      ]
+        "Reduced reporting latency by 95% through denormalized DB architecture",
+        "Authored 14 specs adopted directly into engineering backlog",
+        "Analytics cockpit adopted by 100% of product leadership in 3 weeks"
+      ],
+      "techStack": ["PostgreSQL", "Tableau", "Jira", "Confluence", "Figma", "Miro"]
+    },
+    {
+      "id": "exp-2",
+      "role": "Business Analyst",
+      "company": "DataBridge Solutions",
+      "location": "Remote",
+      "startDate": "2022-01",
+      "endDate": "2024-02",
+      "isCurrent": false,
+      "summary": "Delivered requirements and process redesign across 6 enterprise client implementations. Led onboarding friction analysis resulting in 22% activation improvement. Standardised API contract validation eliminating 40 engineering hours per sprint.",
+      "responsibilities": [
+        "Conducted 12+ stakeholder interviews per engagement to define business requirements",
+        "Mapped AS-IS and TO-BE process flows for enterprise workflow migrations",
+        "Built automated API contract validation pipeline integrated into CI/CD",
+        "Facilitated usability sessions with end users and synthesized findings into PRD recommendations",
+        "Wrote user stories with detailed acceptance criteria for 6 engineering teams",
+        "Coordinated with 6 external API integration partners on schema standardisation"
+      ],
+      "pmKeywords": [
+        "Requirements Workshops",
+        "User Research",
+        "A/B Testing",
+        "Roadmap Prioritisation",
+        "Stakeholder Management"
+      ],
+      "baKeywords": [
+        "Process Modeling",
+        "API Documentation",
+        "Requirements Elicitation",
+        "MoSCoW Prioritisation",
+        "OpenAPI 3.0"
+      ],
+      "impactMetrics": [
+        "Improved client onboarding activation rate by 22%",
+        "Eliminated 40 engineering hours per sprint via API automation",
+        "Delivered 6 successful enterprise client implementations on time",
+        "Mobile activation rate increased from 12% to 41%"
+      ],
+      "techStack": ["OpenAPI 3.0", "Python", "GitHub Actions", "Figma", "Mixpanel", "FullStory"]
+    },
+    {
+      "id": "exp-3",
+      "role": "Junior Business Analyst",
+      "company": "Meridian Consulting Group",
+      "location": "Boston, MA",
+      "startDate": "2020-06",
+      "endDate": "2021-12",
+      "isCurrent": false,
+      "summary": "First professional BA role in a boutique management consulting firm. Supported senior consultants on process audit and digital transformation engagements for mid-market clients.",
+      "responsibilities": [
+        "Documented current-state business processes for 4 mid-market client engagements",
+        "Prepared stakeholder interview guides and synthesis reports",
+        "Built SQL queries for client data extraction and trend analysis",
+        "Assisted with business case development and ROI modelling for digital initiatives",
+        "Created wireframe mockups for client-facing reporting dashboards"
+      ],
+      "pmKeywords": [
+        "Business Case Development",
+        "Stakeholder Interviews",
+        "Process Documentation"
+      ],
+      "baKeywords": [
+        "SQL",
+        "Process Mapping",
+        "Requirements Gathering",
+        "Data Analysis",
+        "Wireframing"
+      ],
+      "impactMetrics": [
+        "Supported 4 successful client engagements in first year",
+        "Promoted to BA role after 12-month junior track",
+        "Recognised for SQL data extraction work that saved 6 hours per client reporting cycle"
+      ],
+      "techStack": ["SQL", "Excel", "Visio", "PowerPoint", "Tableau"]
     }
   ]
 }

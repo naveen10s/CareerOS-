@@ -1,0 +1,9 @@
+[
+  {
+    "id": "lead-1",
+    "situation": "Friction between engineers and design on PRD requirements.",
+    "action": "Facilitated structured sizing sessions and drafted clear JIRA story specs.",
+    "outcome": "Cleared backlog blockage, decreasing sprint planning times from 4 hours to 1.5 hours.",
+    "evidence": ["CTO award milestone citation."]
+  }
+]

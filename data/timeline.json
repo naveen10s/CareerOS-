@@ -6,24 +6,141 @@
     "type": "object",
     "properties": {
       "id": { "type": "string" },
-      "year": { "type": "string" },
-      "quarter": { "type": "string" },
-      "event": { "type": "string" },
-      "details": { "type": "string" },
-      "milestoneType": {
-        "type": "string",
-        "enum": ["career", "education", "pm-transition", "project-launch"]
-      }
+      "title": { "type": "string" },
+      "subtitle": { "type": "string" },
+      "company": { "type": "string" },
+      "startDate": { "type": "string" },
+      "endDate": { "type": "string" },
+      "location": { "type": "string" },
+      "category": { "type": "string" },
+      "description": { "type": "string" },
+      "achievements": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "technologies": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "skills": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "milestone": { "type": "boolean" },
+      "links": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "label": { "type": "string" },
+            "url": { "type": "string" }
+          }
+        }
+      },
+      "status": { "type": "string" }
     }
   },
   "example": [
     {
       "id": "time-1",
-      "year": "2024",
-      "quarter": "Q3",
-      "event": "Took ownership of core analytics product metrics roadmap",
-      "details": "Initiated research into internal telemetry bottlenecks and pitched redesign scope to Director of Engineering.",
-      "milestoneType": "pm-transition"
+      "title": "Senior Business Analyst (Acting PM Owner)",
+      "subtitle": "Leading client onboarding redesign",
+      "company": "TechInnovate Inc.",
+      "startDate": "2024-03",
+      "endDate": "Present",
+      "location": "Boston, MA",
+      "category": "experience",
+      "description": "Spearheading backlog prioritisations, user journey maps, and success metric telemetry for the client onboarding experience.",
+      "achievements": [
+        "Reduced onboarding friction by 22% through cohort SQL analysis and mapping layouts.",
+        "Adopted 14 product specifications directly into engineering scrum backlogs."
+      ],
+      "technologies": ["React", "SQL", "Figma", "Jira"],
+      "skills": ["Backlog Prioritization", "User Research", "Agile Roadmap"],
+      "milestone": true,
+      "links": [
+        {
+          "label": "Telemetry Dashboard",
+          "url": "https://dashboard.careeros.dev"
+        }
+      ],
+      "status": "current"
+    },
+    {
+      "id": "time-2",
+      "title": "Certified Scrum Product Owner (CSPO)",
+      "subtitle": "Scrum Alliance Credential",
+      "company": "Scrum Alliance",
+      "startDate": "2025-01",
+      "endDate": "2025-01",
+      "location": "Online",
+      "category": "certification",
+      "description": "Completed training and agile credentials on product backlog management, user story drafting, and scrum ceremonies execution.",
+      "achievements": ["Passed certification under Scrum Alliance certified trainers."],
+      "technologies": ["Scrum Framework", "Jira"],
+      "skills": ["Agile Backlog Management", "User Story Writing"],
+      "milestone": true,
+      "links": [
+        {
+          "label": "Scrum Alliance Badge",
+          "url": "https://bcert.me/example"
+        }
+      ],
+      "status": "past"
+    },
+    {
+      "id": "time-3",
+      "title": "Senior Business Analyst",
+      "subtitle": "Data telemetry team lead",
+      "company": "TechInnovate Inc.",
+      "startDate": "2022-06",
+      "endDate": "2024-03",
+      "location": "Boston, MA",
+      "category": "experience",
+      "description": "Designed business requirements models and query schemas to analyze customer dropoff activation rates.",
+      "achievements": [
+        "Optimized queries, reducing telemetry data reporting latency by 95%.",
+        "Authored data-sync requirements adopted by engineering lead."
+      ],
+      "technologies": ["SQL", "Tableau API", "PostgreSQL", "Node.js"],
+      "skills": ["Data Schema Definition", "Process Flow Mapping", "Telemetry Design"],
+      "milestone": false,
+      "links": [],
+      "status": "past"
+    },
+    {
+      "id": "time-4",
+      "title": "Product Management Foundations Course",
+      "subtitle": "University of Maryland Curriculum",
+      "company": "Coursera",
+      "startDate": "2025-06",
+      "endDate": "2025-06",
+      "location": "Online",
+      "category": "learning",
+      "description": "Studied customer discovery techniques, prototyping tools, MVP scope definition, and business model canvas frameworks.",
+      "achievements": ["Completed course, covering customer discovery and wireframing."],
+      "technologies": ["Figma", "Miro"],
+      "skills": ["Customer Discovery", "Prototyping", "MVP Definition"],
+      "milestone": false,
+      "links": [],
+      "status": "past"
+    },
+    {
+      "id": "time-5",
+      "title": "Associate Product Manager (APM)",
+      "subtitle": "Target Career Milestone",
+      "company": "Product Lab / Growth Team",
+      "startDate": "2026-08",
+      "endDate": "Future",
+      "location": "Hybrid / Remote",
+      "category": "experience",
+      "description": "Targeting full ownership of feature lifecycles, user cohort telemetry metrics, and release planning goals.",
+      "achievements": ["Goal: Lead feature lifecycle from discovery to GA launch."],
+      "technologies": ["Product Analytics", "Amplitude", "Growth Telemetry"],
+      "skills": ["Feature Lifecycle Management", "Release Planning", "Cohort Metrics"],
+      "milestone": true,
+      "links": [],
+      "status": "future"
     }
   ]
 }

@@ -1,0 +1,13 @@
+[
+  {
+    "id": "int-1",
+    "question": "Tell me about a time you resolved engineering friction.",
+    "starStories": {
+      "situation": "Friction between engineers and design on PRD requirements.",
+      "task": "Resolve alignment blocks.",
+      "action": "Facilitated structured sizing sessions and story spec updates.",
+      "result": "Planning meetings reduced from 4 hours to 1.5 hours."
+    },
+    "category": "leadership"
+  }
+]

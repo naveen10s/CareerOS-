@@ -1,0 +1,17 @@
+{
+  "courses": ["course-1"],
+  "books": [
+    {
+      "title": "Inspired",
+      "author": "Marty Cagan",
+      "status": "completed"
+    },
+    {
+      "title": "Escaping the Build Trap",
+      "author": "Melissa Perri",
+      "status": "reading"
+    }
+  ],
+  "certifications": ["cert-1"],
+  "roadmap": ["SQL advanced optimizations", "Interaction Design Principles"]
+}

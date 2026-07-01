@@ -1,0 +1,332 @@
+[
+  {
+    "id": "proj-1",
+    "slug": "analytics-dashboard-redesign",
+    "title": "Real-Time Analytics Cockpit",
+    "category": "Product Infrastructure",
+    "status": "Completed",
+    "duration": "6 Months",
+    "teamSize": 5,
+    "role": "Lead Analyst & Acting Product Owner",
+    "client": "TechInnovate Inc.",
+    "problem": "Product teams lacked immediate access to user activation cohorts, causing gut-feel roadmap decisions and 5-day reporting latency that blocked rapid iteration.",
+    "businessContext": "TechInnovate's analytics pipeline was bottlenecked by complex multi-join queries and manual ETL processes, resulting in data that was always days behind business decisions.",
+    "users": ["Product Managers", "UX Designers", "Engineering Directors", "Executive Leaders"],
+    "research": [
+      "Conducted 12 internal user interviews on analytics access workflows",
+      "Mapped existing telemetry tracking tables and identified 7 data bottlenecks",
+      "Benchmarked query performance against industry standards",
+      "Reviewed 3 competing analytics tools (Amplitude, Mixpanel, Heap)"
+    ],
+    "painPoints": [
+      "5-day latency between user actions and visible cohort data",
+      "SQL query complexity blocked non-technical stakeholders",
+      "No unified dashboard — 4 different tools for different metrics",
+      "Manual report generation consumed 8 hours per week of analyst time"
+    ],
+    "requirements": [
+      "Under 2-hour data reporting latency for all activation cohorts",
+      "Interactive filters by sign-up date, cohort, feature flag, and geography",
+      "Visual query builder for non-technical users",
+      "Automated scheduled reporting to Slack"
+    ],
+    "userStories": [
+      "As a PM, I want to filter user cohorts by sign-up date so that I can validate release dropoffs.",
+      "As a designer, I want to view funnel dropoffs visually so that I can identify friction areas.",
+      "As an executive, I want a weekly summary email so I can track progress without logging in."
+    ],
+    "prioritization": "Used RICE framework — interactive filtering scored highest (Reach × Impact ÷ Effort). Scheduled exports deprioritised in MVP to reduce complexity.",
+    "roadmap": [
+      {
+        "phase": "Phase 1: Discovery & API Schema",
+        "deliverables": [
+          "User interview reports",
+          "Telemetry schema validation",
+          "Data model specification"
+        ]
+      },
+      {
+        "phase": "Phase 2: Database Optimisation",
+        "deliverables": [
+          "Automated ETL pipeline",
+          "Denormalized reporting views",
+          "Query performance benchmarks"
+        ]
+      },
+      {
+        "phase": "Phase 3: Dashboard Build",
+        "deliverables": [
+          "Interactive filter UI",
+          "Recharts telemetry panels",
+          "Stakeholder demo + sign-off"
+        ]
+      }
+    ],
+    "solution": "Designed a Next.js analytics cockpit consuming denormalized query tables directly, reducing cohort data sync from 5 days to under 2 hours. Implemented visual SQL query builder for non-technical users.",
+    "implementation": "Collaborated with 2 backend engineers to build denormalized reporting views. Used React Hook Form for dynamic filter state and Recharts for interactive dashboards.",
+    "challenges": [
+      "Parsing unstructured historical click data into defined cohort event models.",
+      "Mitigating initial dashboard query lag for segments exceeding 500K users.",
+      "Aligning 4 business units on a shared metric taxonomy before sprint planning."
+    ],
+    "decisions": [
+      {
+        "title": "Denormalizing Data Views",
+        "description": "Creating flat reporting tables rather than complex runtime joins.",
+        "tradeoff": "Increases storage costs ~15% but eliminates query runtime lag entirely."
+      }
+    ],
+    "tradeoffs": "Deferred automated Slack export feature to MVP+1 sprint to prioritise latency optimisation and interactive filter UX.",
+    "businessImpact": "Reporting latency reduced from 5 days to 2 hours. Dashboard adopted by 100% of product leadership within 3 weeks of launch.",
+    "metrics": [
+      "Dashboard adopted by 100% of product leadership in 3 weeks",
+      "Reporting latencies reduced by 95% (5 days → 2 hours)",
+      "8 analyst hours per week eliminated through automation",
+      "4 business units aligned on shared metric taxonomy"
+    ],
+    "kpis": ["funnel-activation-rate", "dashboard-daily-active-users", "query-latency"],
+    "timeline": [
+      "Month 1: User Discovery & SQL Schema Spec",
+      "Month 3: Backend DB Denormalization + ETL",
+      "Month 6: Interactive Dashboard Launch + Adoption"
+    ],
+    "screenshots": [],
+    "techStack": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "PostgreSQL",
+      "Recharts",
+      "Framer Motion"
+    ],
+    "tools": ["Jira", "Figma", "Tableau API", "Miro", "Confluence"],
+    "stakeholders": [
+      { "name": "Sarah Jenkins", "role": "Director of Engineering" },
+      { "name": "Marcus Vance", "role": "VP of Product" }
+    ],
+    "lessonsLearned": [
+      "Involving backend engineers early in DB schema prevents late-stage API blockers.",
+      "Telemetry definitions must be aligned across business units before sprint planning starts.",
+      "Non-technical users need visual query tools — raw SQL access alone isn't sufficient."
+    ],
+    "futureImprovements": [
+      "AI-assisted SQL query builder with natural language input",
+      "Automated Slack alerts triggered by funnel drop thresholds",
+      "Mobile-responsive analytics view for executive stakeholders"
+    ]
+  },
+  {
+    "id": "proj-2",
+    "slug": "onboarding-friction-reduction",
+    "title": "Customer Onboarding Friction Elimination",
+    "category": "User Experience Optimisation",
+    "status": "Completed",
+    "duration": "4 Months",
+    "teamSize": 4,
+    "role": "Senior Business Analyst / PM Collaborator",
+    "client": "TechInnovate Inc.",
+    "problem": "New user activation rate was dropping 38% in the first 7 days, traced to a confusing 11-step onboarding flow with unclear value propositions at each stage.",
+    "businessContext": "TechInnovate was losing high-intent users during onboarding, resulting in wasted marketing spend and increasing CAC without matching LTV improvements.",
+    "users": ["New Users (B2B SaaS)", "Customer Success Managers", "Product Designers"],
+    "research": [
+      "Analysed 90-day activation funnel data for 12,000 new users",
+      "Conducted 8 user interviews with churned accounts",
+      "Session replay analysis across 400 user sessions using FullStory",
+      "Competitive benchmark of 5 SaaS onboarding flows"
+    ],
+    "painPoints": [
+      "11-step onboarding flow with no progress indication",
+      "Unclear value propositions — users didn't understand the 'why' at each step",
+      "No personalisation — same flow regardless of user role or company size",
+      "Mobile onboarding was completely broken (35% of sign-ups from mobile)"
+    ],
+    "requirements": [
+      "Reduce onboarding to maximum 5 steps with clear progress indicator",
+      "Add role-based personalisation paths (Admin, Viewer, Editor)",
+      "Mobile-first responsive redesign of all onboarding screens",
+      "In-app contextual tooltips at each activation milestone"
+    ],
+    "userStories": [
+      "As a new user, I want to see my progress so that I feel motivated to complete onboarding.",
+      "As an admin, I want a tailored setup flow so that I only see steps relevant to my role.",
+      "As a mobile user, I want the full onboarding experience so that I can activate on any device."
+    ],
+    "prioritization": "MoSCoW method — Must: progress indicator, mobile fix. Should: personalisation. Could: tooltip system. Won't: gamification in v1.",
+    "roadmap": [
+      {
+        "phase": "Phase 1: Research & Current State Mapping",
+        "deliverables": ["Funnel analysis report", "User interview synthesis", "AS-IS flow diagram"]
+      },
+      {
+        "phase": "Phase 2: Redesign & Specification",
+        "deliverables": [
+          "TO-BE flow specification",
+          "Figma prototype",
+          "Acceptance criteria per step"
+        ]
+      },
+      {
+        "phase": "Phase 3: Build & Validate",
+        "deliverables": [
+          "A/B test setup",
+          "Staged rollout plan",
+          "Post-launch monitoring dashboard"
+        ]
+      }
+    ],
+    "solution": "Compressed 11-step flow to 5 role-personalised paths with embedded progress indicator and contextual tooltips. Full mobile redesign delivered in parallel.",
+    "implementation": "Wrote detailed PRD with acceptance criteria per screen. Collaborated with 2 designers and 1 engineer. Managed A/B test configuration and rollout coordination.",
+    "challenges": [
+      "Agreeing on role taxonomy across Sales, Product, and Engineering — 3 different definitions of 'user type'.",
+      "Mobile redesign required backend API changes that were descoped — required creative frontend-only solutions."
+    ],
+    "decisions": [
+      {
+        "title": "Role-Based Personalisation vs. Universal Flow",
+        "description": "Chose personalised paths over a single universal flow despite higher initial complexity.",
+        "tradeoff": "3x the QA surface area but significantly higher activation rates per persona."
+      }
+    ],
+    "tradeoffs": "Deferred gamification (progress streaks, achievement badges) to reduce build complexity. In-app tooltip system built as a thin layer — not a full product tour tool.",
+    "businessImpact": "New user activation rate improved by 22% within 60 days. Mobile activation rate increased from 12% to 41%.",
+    "metrics": [
+      "Activation rate improved by 22% (38% drop reduced to 16%)",
+      "Mobile activation rate increased from 12% to 41%",
+      "Average onboarding completion time reduced from 14 minutes to 6 minutes",
+      "Customer Success escalations related to onboarding dropped 55%"
+    ],
+    "kpis": ["activation-rate-d7", "onboarding-completion-rate", "time-to-first-value"],
+    "timeline": [
+      "Month 1: Funnel Analysis & User Research",
+      "Month 2: Flow Redesign & PRD Specification",
+      "Month 4: A/B Test Launch + Staged Rollout"
+    ],
+    "screenshots": [],
+    "techStack": ["Figma", "FullStory", "Mixpanel", "PostgreSQL", "React"],
+    "tools": ["Jira", "Figma", "Miro", "Confluence", "Notion"],
+    "stakeholders": [
+      { "name": "Lisa Chen", "role": "Head of Customer Success" },
+      { "name": "Marcus Vance", "role": "VP of Product" },
+      { "name": "Dev Kapoor", "role": "Lead Engineer" }
+    ],
+    "lessonsLearned": [
+      "Defining user role taxonomy should be a prerequisite, not a parallel workstream.",
+      "A/B testing onboarding flows requires careful holdout group design to avoid data contamination.",
+      "Mobile-first is not just a design principle — it requires API-level consideration too."
+    ],
+    "futureImprovements": [
+      "Full product tour system replacing manual tooltip implementation",
+      "AI-driven adaptive onboarding path based on behavioural signals",
+      "Automated success milestones triggering CS outreach workflows"
+    ]
+  },
+  {
+    "id": "proj-3",
+    "slug": "api-integration-automation",
+    "title": "API Integration Validation Automation",
+    "category": "Process Automation",
+    "status": "Completed",
+    "duration": "3 Months",
+    "teamSize": 3,
+    "role": "Senior Business Analyst",
+    "client": "TechInnovate Inc.",
+    "problem": "Manual API integration checking was consuming 40 engineering hours per sprint and causing release delays due to inconsistent validation standards across 6 integration partners.",
+    "businessContext": "Engineering releases were being delayed by 1-2 days per sprint due to manual API contract checks performed by engineers who had to context-switch from feature work.",
+    "users": ["Backend Engineers", "QA Engineers", "Integration Partners", "Release Managers"],
+    "research": [
+      "Audited 6 months of sprint retrospective notes — API validation delays cited in 70% of sprint reviews",
+      "Interviewed 5 backend engineers to map the manual validation workflow",
+      "Reviewed 3 existing API testing tools (Postman, Pact, WireMock)",
+      "Documented all 6 partner API contracts and their validation requirements"
+    ],
+    "painPoints": [
+      "40 engineer hours per sprint consumed by manual contract checks",
+      "No standardised validation protocol — each engineer used different approaches",
+      "Integration failures caught in staging rather than local development, causing expensive late-cycle fixes",
+      "6 partner API contracts stored in different formats with no single source of truth"
+    ],
+    "requirements": [
+      "Automated contract validation running on every pull request CI pipeline",
+      "Single standardised API contract repository with version control",
+      "Slack notification for contract validation failures with failure context",
+      "Partner-specific validation profiles supporting different schema formats"
+    ],
+    "userStories": [
+      "As an engineer, I want automated contract validation in CI so that I catch integration failures before staging.",
+      "As a release manager, I want a dashboard of integration health so that I can make confident release decisions.",
+      "As a QA engineer, I want validation reports per partner so that I can audit integration compliance."
+    ],
+    "prioritization": "Value vs. Effort matrix — CI pipeline integration scored highest value at lowest effort. Dashboard reporting scored lower effort but was deferred to avoid scope creep.",
+    "roadmap": [
+      {
+        "phase": "Phase 1: Contract Standardisation",
+        "deliverables": [
+          "Unified API contract repository",
+          "Standard schema format definition",
+          "6 partner contracts migrated"
+        ]
+      },
+      {
+        "phase": "Phase 2: Automation Build",
+        "deliverables": [
+          "CI pipeline integration",
+          "Automated validation scripts",
+          "Slack notification webhook"
+        ]
+      },
+      {
+        "phase": "Phase 3: Monitoring & Adoption",
+        "deliverables": [
+          "Integration health dashboard",
+          "Engineer runbook",
+          "Retrospective validation report"
+        ]
+      }
+    ],
+    "solution": "Standardised all 6 partner API contracts into a unified OpenAPI schema repository. Built automated validation scripts integrated into the CI pipeline with Slack failure notifications.",
+    "implementation": "Collaborated with 2 backend engineers. Wrote technical specification for contract schema standardisation. Coordinated with 6 external partners to validate contract accuracy.",
+    "challenges": [
+      "2 of 6 integration partners had undocumented API behaviours not reflected in their public schemas.",
+      "CI pipeline integration required coordination with DevOps team who had a 3-week backlog.",
+      "Engineer adoption required a change in existing PR workflow habits."
+    ],
+    "decisions": [
+      {
+        "title": "OpenAPI Standard vs. Custom Schema Format",
+        "description": "Chose OpenAPI 3.0 as the universal standard over building a proprietary schema format.",
+        "tradeoff": "Required partner schema migrations for 2 of 6 partners but provided long-term ecosystem compatibility."
+      }
+    ],
+    "tradeoffs": "Integration health dashboard deferred to allow full CI pipeline focus. Manual override flag added for emergency releases bypassing validation — creates risk but was required for business continuity.",
+    "businessImpact": "Eliminated 40 engineering hours per sprint consumed by manual validation. Integration failures caught at PR stage rather than staging, reducing release cycle time by 1.5 days.",
+    "metrics": [
+      "40 engineering hours per sprint eliminated",
+      "Release cycle time reduced by 1.5 days (from 3.5 to 2 days average)",
+      "Integration failures caught at PR stage — 0 staging failures in 3 months post-launch",
+      "CTO recognition awarded for cross-functional engineering-business collaboration"
+    ],
+    "kpis": ["engineering-hours-saved", "release-cycle-time", "integration-failure-rate"],
+    "timeline": [
+      "Month 1: API Audit & Contract Standardisation",
+      "Month 2: CI Pipeline Integration + Slack Webhooks",
+      "Month 3: Dashboard Build + Engineer Adoption Training"
+    ],
+    "screenshots": [],
+    "techStack": ["OpenAPI 3.0", "Python", "GitHub Actions", "Slack API", "PostgreSQL"],
+    "tools": ["Jira", "Confluence", "Postman", "GitHub", "Slack"],
+    "stakeholders": [
+      { "name": "Sarah Jenkins", "role": "Director of Engineering" },
+      { "name": "Raj Patel", "role": "DevOps Lead" }
+    ],
+    "lessonsLearned": [
+      "External partner schemas should be validated against actual API behaviour, not just documentation.",
+      "DevOps team should be included in requirement discovery, not just implementation.",
+      "Change management for engineering workflow changes requires clear runbooks and peer champions."
+    ],
+    "futureImprovements": [
+      "Full integration health monitoring dashboard with trend analysis",
+      "AI-assisted contract diff detection for partner API changes",
+      "Automated partner notification system for schema validation failures"
+    ]
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "personal": {
+    "name": "Alex Mercer",
+    "email": "alex@careeros.dev",
+    "avatar": "/assets/avatar.jpg",
+    "location": "San Francisco, CA"
+  },
+  "career": {
+    "headline": "Business Analyst transitioning to PM | Data-driven Strategy Specialist",
+    "targetRoles": ["Associate Product Manager", "Product Manager"],
+    "currentRole": "Senior Business Analyst"
+  },
+  "vision": {
+    "statement": "Bridge legacy analytics data layers into customer feature solutions.",
+    "transitionFocus": "Translating telemetry analytics into product prioritization roadmaps."
+  },
+  "goals": [
+    "Complete CSPO certification",
+    "Own feature launch lifecycle from concept to metrics validation"
+  ],
+  "links": {
+    "linkedin": "https://linkedin.com/in/alex-mercer",
+    "github": "https://github.com/career-os",
+    "portfolio": "https://careeros.dev"
+  },
+  "brand": {
+    "themeColor": "violet",
+    "tagline": "Career Operating System Spec"
+  }
+}
