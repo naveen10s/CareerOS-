@@ -134,6 +134,12 @@ export function CommandPalette() {
         action: () => router.push("/contact"),
       },
       {
+        icon: <Settings className="h-4 w-4" />,
+        label: "Go to Admin Dashboard / CMS Control Panel",
+        category: "Navigation",
+        action: () => router.push("/admin"),
+      },
+      {
         icon: <Sun className="h-4 w-4" />,
         label: "Switch Theme: Light",
         category: "Theme",
