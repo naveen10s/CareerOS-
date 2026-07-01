@@ -154,7 +154,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="bg-background text-foreground flex h-screen overflow-hidden"
+            className="bg-background text-foreground flex min-h-screen"
           >
             {/* Tactile mouse follower dot */}
             <MouseFollower />
@@ -175,7 +175,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
             />
 
             {/* Main Content Pane */}
-            <div className="relative z-10 flex flex-1 flex-col overflow-hidden">
+            <div className="relative z-10 flex min-h-screen flex-1 flex-col">
               {/* Top Sticky Header */}
               <Navbar
                 logo={
@@ -204,7 +204,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
               />
 
               {/* Scrollable Workspaces */}
-              <div className="flex flex-1 flex-col justify-between overflow-y-auto">
+              <div className="flex flex-1 flex-col justify-between">
                 <main
                   id="main-content"
                   tabIndex={-1}

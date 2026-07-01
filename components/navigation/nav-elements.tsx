@@ -123,7 +123,7 @@ export function Sidebar({ title, items, footerProfile, className }: SidebarProps
   return (
     <aside
       className={cn(
-        "border-border/20 bg-card text-card-foreground duration-normal ease-premium relative flex h-screen flex-col border-r transition-all",
+        "border-border/20 bg-card text-card-foreground duration-normal ease-premium sticky top-0 z-20 flex h-screen flex-col border-r transition-all",
         collapsed ? "w-16" : "w-64",
         className,
       )}
