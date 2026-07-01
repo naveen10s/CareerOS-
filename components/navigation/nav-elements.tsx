@@ -23,7 +23,7 @@ export function Navbar({ logo, navItems, actions, className }: NavbarProps) {
   return (
     <header
       className={cn(
-        "glass-panel border-border/20 duration-normal sticky top-0 z-40 w-full border-b px-6 py-3 transition-all",
+        "glass-panel border-border/40 duration-normal shadow-premium-sm bg-card/65 sticky top-0 z-40 w-full rounded-2xl border px-6 py-3 backdrop-blur-md transition-all",
         className,
       )}
     >
@@ -123,7 +123,7 @@ export function Sidebar({ title, items, footerProfile, className }: SidebarProps
   return (
     <aside
       className={cn(
-        "border-border/20 bg-card text-card-foreground duration-normal ease-premium sticky top-0 z-20 flex h-screen flex-col border-r transition-all",
+        "bg-card/75 text-card-foreground duration-normal ease-premium border-border/40 shadow-premium-md sticky top-4 left-4 z-20 my-4 ml-4 flex h-[calc(100vh-2rem)] shrink-0 flex-col rounded-2xl border backdrop-blur-md transition-all",
         collapsed ? "w-16" : "w-64",
         className,
       )}

@@ -175,7 +175,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
             />
 
             {/* Main Content Pane */}
-            <div className="relative z-10 flex min-h-screen flex-1 flex-col">
+            <div className="relative z-10 flex min-h-screen flex-1 flex-col p-4">
               {/* Top Sticky Header */}
               <Navbar
                 logo={
