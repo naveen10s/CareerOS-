@@ -344,24 +344,24 @@ export default function ProductLabPage() {
               />
 
               {/* Sticky sidebar nav */}
-              <aside className="w-full shrink-0 space-y-3 lg:sticky lg:top-24 lg:w-60">
+              <aside className="w-full shrink-0 space-y-4 lg:sticky lg:top-24 lg:w-60">
                 <button
                   onClick={handleBack}
-                  className="border-border/20 text-muted-foreground hover:text-foreground hover:border-border/50 flex w-full items-center gap-2 rounded-lg border px-3 py-2 font-mono text-[9px] transition-all"
+                  className="border-border/20 text-muted-foreground hover:text-foreground hover:border-border/50 hover:bg-secondary/15 flex w-full cursor-pointer items-center gap-2 rounded-lg border px-3 py-2.5 font-mono text-[9px] transition-all"
                   aria-label="Back to Product Lab"
                 >
                   <ArrowLeft className="h-3.5 w-3.5" /> BACK TO LAB
                 </button>
-                <Card variant="glass" className="p-3">
-                  <span className="text-primary mb-2 block pl-1 font-mono text-[8px] font-bold uppercase">
-                    CASE STUDY INDEX
+                <Card variant="glass" className="border-primary/10 shadow-premium-sm p-4">
+                  <span className="text-primary mb-3 block pl-1 font-mono text-[8px] font-bold tracking-widest uppercase">
+                    DOCUMENT INDEX
                   </span>
                   <nav className="space-y-1">
                     {SECTIONS.map((sec) => (
                       <button
                         key={sec.id}
                         onClick={() => scrollTo(sec.id)}
-                        className="text-muted-foreground hover:bg-secondary/40 hover:text-foreground block w-full truncate rounded px-2 py-1.5 text-left font-mono text-[9px] uppercase transition-all"
+                        className="text-muted-foreground hover:bg-secondary/30 hover:text-foreground hover:border-primary/50 block w-full cursor-pointer truncate rounded-md border-l-2 border-transparent px-2.5 py-2 text-left font-mono text-[9px] uppercase transition-all hover:pl-3"
                       >
                         {sec.label}
                       </button>
@@ -370,17 +370,20 @@ export default function ProductLabPage() {
                 </Card>
 
                 {/* Project meta */}
-                <Card variant="solid" className="space-y-3 p-4">
-                  <div className="space-y-1.5 font-mono text-[9px]">
+                <Card variant="solid" className="border-border/10 bg-secondary/5 space-y-3.5 p-4">
+                  <div className="space-y-2 font-mono text-[9px]">
                     {[
                       { label: "Duration", value: selectedProject.duration },
                       { label: "Team Size", value: `${selectedProject.teamSize} people` },
                       { label: "Role", value: selectedProject.role },
                       { label: "Client", value: selectedProject.client },
                     ].map((item) => (
-                      <div key={item.label} className="flex justify-between gap-2">
+                      <div
+                        key={item.label}
+                        className="border-border/5 flex justify-between gap-2 border-b pb-1.5"
+                      >
                         <span className="text-muted-foreground uppercase">{item.label}</span>
-                        <span className="text-foreground text-right">{item.value}</span>
+                        <span className="text-foreground text-right font-bold">{item.value}</span>
                       </div>
                     ))}
                   </div>
