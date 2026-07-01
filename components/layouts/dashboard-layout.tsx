@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import {
   Home,
   Activity,
@@ -49,10 +49,10 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
     }
   }, []);
 
-  const handleLoadingComplete = () => {
+  const handleLoadingComplete = useCallback(() => {
     sessionStorage.setItem("career-os-booted", "true");
     setLoading(false);
-  };
+  }, []);
 
   const sidebarLinks = [
     { label: "Home", href: "/", icon: <Home className="h-4 w-4" />, active: pathname === "/" },

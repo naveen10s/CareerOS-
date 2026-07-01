@@ -36,15 +36,18 @@ export function LoadingScreen({ onComplete }: { onComplete: () => void }) {
     }, intervalTime);
 
     // 2. Incremental logs display
+    const timeouts: any[] = [];
     const logInterval = duration / bootLogs.length;
     bootLogs.forEach((log, index) => {
-      setTimeout(() => {
+      const t = setTimeout(() => {
         setLogs((prev) => [...prev, log]);
       }, index * logInterval);
+      timeouts.push(t);
     });
 
     return () => {
       clearInterval(timer);
+      timeouts.forEach(clearTimeout);
     };
   }, [onComplete]);
 
