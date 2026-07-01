@@ -144,7 +144,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
   ];
 
   return (
-    <div className="bg-background relative min-h-screen overflow-hidden">
+    <div className="bg-background relative min-h-screen">
       <AnimatePresence mode="wait">
         {loading ? (
           <LoadingScreen key="boot-loader" onComplete={handleLoadingComplete} />
