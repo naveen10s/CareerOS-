@@ -276,3 +276,19 @@ select:focus {
   border-color: var(--primary) !important;
   box-shadow: 0 0 0 2px var(--glow-primary) !important;
 }
+
+/* Shimmer Loading Animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer-effect {
+  background: linear-gradient(90deg, var(--secondary) 25%, var(--border) 37%, var(--secondary) 63%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
